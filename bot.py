@@ -3,6 +3,7 @@ import logging
 from os import environ
 from dotenv import load_dotenv
 import multiprocessing
+from server import keep_alive
 
 
 API_ID = int(environ.get('API_ID', '20407293'))
@@ -32,3 +33,4 @@ if __name__ == '__main__':
     Mbot.run()
     pool.close()
     pool.join()
+    keep_alive()
